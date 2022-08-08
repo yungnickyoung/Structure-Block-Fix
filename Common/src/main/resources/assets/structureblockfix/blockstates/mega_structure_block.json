@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "mode=corner": {
+      "model": "structureblockfix:block/mega_structure_block_corner"
+    },
+    "mode=data": {
+      "model": "structureblockfix:block/mega_structure_block_data"
+    },
+    "mode=load": {
+      "model": "structureblockfix:block/mega_structure_block_load"
+    },
+    "mode=save": {
+      "model": "structureblockfix:block/mega_structure_block_save"
+    }
+  }
+}

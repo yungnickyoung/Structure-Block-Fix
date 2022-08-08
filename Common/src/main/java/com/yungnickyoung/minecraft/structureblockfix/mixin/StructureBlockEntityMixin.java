@@ -26,7 +26,7 @@ public abstract class StructureBlockEntityMixin {
             require = 0
     )
     private static int structureblockfix_increaseStructureBlockCornerSearchRange(int constant) {
-        return 128;
+        return 256; // Cannot go above 127 due to byte size in packet transmission
     }
 
     @Inject(method = "load", at = @At("RETURN"))

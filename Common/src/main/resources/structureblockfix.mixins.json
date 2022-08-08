@@ -4,11 +4,15 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "structureblockfix.refmap.json",
   "mixins": [
+    "PlayerMixin",
     "ServerboundSetStructureBlockPacketMixin",
     "StructureBlockEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
-  "minVersion": "0.8"
+  "minVersion": "0.8",
+  "client": [
+    "LocalPlayerMixin"
+  ]
 }
