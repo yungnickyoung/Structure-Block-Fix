@@ -11,7 +11,7 @@ public abstract class ServerboundSetStructureBlockPacketMixin {
             method = "<init>(Lnet/minecraft/network/FriendlyByteBuf;)V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/util/Mth;clamp(III)I")
     )
-    private int structureblockfix_removeStructureBlockRangeConstraint(int value, int min, int max) {
+    private int structureblockfix_removeStructureBlockRangeConstraint2(int value, int min, int max) {
         return value;
     }
 }

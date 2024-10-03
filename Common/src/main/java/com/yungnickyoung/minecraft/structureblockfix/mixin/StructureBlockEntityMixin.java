@@ -1,6 +1,7 @@
 package com.yungnickyoung.minecraft.structureblockfix.mixin;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Vec3i;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.StructureBlockEntity;
@@ -25,19 +26,19 @@ public abstract class StructureBlockEntityMixin {
             constant = @Constant(intValue = 80),
             require = 0
     )
-    private static int structureblockfix_increaseStructureBlockCornerSearchRange(int constant) {
+    private int structureblockfix_increaseStructureBlockCornerSearchRange(int constant) {
         return 128;
     }
 
-    @Inject(method = "load", at = @At("RETURN"))
-    public void structureblockfix_removeStructureBlockRangeConstraint(CompoundTag compoundTag, CallbackInfo ci) {
-        int i = compoundTag.getInt("posX");
-        int j = compoundTag.getInt("posY");
-        int k = compoundTag.getInt("posZ");
+    @Inject(method = "loadAdditional", at = @At("RETURN"))
+    public void structureblockfix_removeStructureBlockRangeConstraint1(CompoundTag tag, HolderLookup.Provider $$1, CallbackInfo ci) {
+        int i = tag.getInt("posX");
+        int j = tag.getInt("posY");
+        int k = tag.getInt("posZ");
         this.structurePos = new BlockPos(i, j, k);
-        int l = compoundTag.getInt("sizeX");
-        int i1 = compoundTag.getInt("sizeY");
-        int j1 = compoundTag.getInt("sizeZ");
+        int l = tag.getInt("sizeX");
+        int i1 = tag.getInt("sizeY");
+        int j1 = tag.getInt("sizeZ");
         this.structureSize = new Vec3i(l, i1, j1);
     }
 }
