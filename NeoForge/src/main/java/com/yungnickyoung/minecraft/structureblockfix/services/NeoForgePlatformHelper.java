@@ -3,7 +3,7 @@ package com.yungnickyoung.minecraft.structureblockfix.services;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
 
-public class ForgePlatformHelper implements IPlatformHelper {
+public class NeoForgePlatformHelper implements IPlatformHelper {
     @Override
     public String getPlatformName() {
         return "NeoForge";
